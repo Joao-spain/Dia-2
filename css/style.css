@@ -1,0 +1,286 @@
+/* --- Variables Modernas (Modo Claro con Imagen de Fondo) --- */
+:root {
+    --bg-app: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.88); 
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --border: rgba(229, 231, 235, 0.7);
+    
+    /* Colores Basados en la Captura */
+    --btn-primary: #38bdf8;
+    --btn-hover: #0ea5e9;
+    --summary-bg: rgba(249, 250, 251, 0.85);
+    
+    /* Prioridades */
+    --alta: #ef4444;
+    --media: #f59e0b;
+    --baja: #10b981;
+}
+
+/* --- Reseteo Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-app);
+    /* Imagen de fondo moderna, clara y abstracta */
+    background-image: url('https://uvn-brightspot.s3.amazonaws.com/assets/vixes/btg/tech.batanga.com/files/Fondos-para-paginas-web-02.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+/* --- Título Minimalista --- */
+header {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* --- Contenedor Principal (Efecto Cristal sobre Fondo Blanco) --- */
+main {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+main > section:first-of-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+main > section:first-of-type > form {
+    display: contents;
+}
+
+/* Campo de texto superior completo */
+#nombre {
+    grid-column: span 2;
+}
+
+/* Botón Agregar inferior completo */
+main > section:first-of-type button {
+    grid-column: span 2;
+    background-color: var(--btn-primary);
+    color: white;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.2);
+}
+
+main > section:first-of-type button:hover {
+    background-color: var(--btn-hover);
+    transform: scale(1.01);
+}
+
+/* Estilos de Control */
+#nombre, #prioridad, #fecha, main > section:first-of-type button {
+    background: #ffffff;
+    border: 1px solid rgba(229, 231, 235, 1);
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    outline: none;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+#nombre:focus, #prioridad:focus, #fecha:focus {
+    border-color: var(--btn-primary);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+#mensaje {
+    grid-column: span 2;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--alta);
+}
+
+/* --- Caja de Resumen Integrada --- */
+main > section:nth-of-type(2) {
+    background-color: var(--summary-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+main > section:nth-of-type(2) h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+main > section:nth-of-type(2) p {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-right: 15px;
+}
+
+main > section:nth-of-type(2) span {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+#completadas {
+    color: var(--baja) !important;
+}
+
+/* --- Listado de Tareas Dinámicas --- */
+#ListaTareas {
+    border: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.tarea-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.01);
+}
+
+.tarea-item.Alta { border-left: 4px solid var(--alta); }
+.tarea-item.Media { border-left: 4px solid var(--media); }
+.tarea-item.Baja { border-left: 4px solid var(--baja); }
+
+/* --- Estilos para Tareas --- */
+.tarea {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.tarea.alta {
+    border-left: 4px solid var(--alta);
+}
+
+.tarea.media {
+    border-left: 4px solid var(--media);
+}
+
+.tarea.baja {
+    border-left: 4px solid var(--baja);
+}
+
+.tarea-contenido {
+    flex: 1;
+}
+
+.tarea-contenido h4 {
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    word-break: break-word;
+}
+
+.tarea-contenido.completada {
+    opacity: 0.6;
+}
+
+.tarea-contenido.completada h4 {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.tarea-contenido p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0.3rem 0;
+}
+
+.tarea-contenido strong {
+    color: var(--text-main);
+}
+
+.tarea-acciones {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.btn-completar, .btn-eliminar {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-completar {
+    background-color: var(--baja);
+    color: white;
+}
+
+.btn-completar:hover {
+    background-color: #059669;
+    transform: scale(1.05);
+}
+
+.btn-eliminar {
+    background-color: var(--alta);
+    color: white;
+}
+
+.btn-eliminar:hover {
+    background-color: #dc2626;
+    transform: scale(1.05);
+}
+
+/* --- Pie de Página --- */
+footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}

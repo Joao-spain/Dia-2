@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <header>
+        <h1>Lista de Tareas</h1>
+    </header>
+
+    <main>
+        <section>
+            <form id="formTarea">
+                <input type="text" id="nombre" placeholder="Agregar nueva tarea...">
+                <select id="prioridad">
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+                <input type="date" id="fecha">
+                <button type="submit">Agregar</button>
+            </form>
+            <p id="mensaje"></p>
+        </section>
+
+        <section>
+            <h3>Resumen de Tareas: </h3>
+            <p>Total: <span id="total">0</span></p>
+            <p>Pendientes: <span id="pendientes">0</span></p>
+            <p>Completadas: <span id="completadas">0</span></p>
+        </section>
+
+        <section id="ListaTareas">
+        </section>
+        
+    </main>
+    <footer>Derechos Reservados por Joao &copy;2023</footer>
+
+    <script src="jss/script.js"></script>
+</body>
+</html>
