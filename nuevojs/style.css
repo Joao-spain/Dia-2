@@ -1,0 +1,198 @@
+/* ========================================
+   GLASSMORPHISM STYLE - Diseño Moderno
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenedor Principal */
+.container {
+    width: 100%;
+    max-width: 600px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Encabezado */
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+h2 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones */
+button {
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0;
+    font-size: 1em;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+/* Contenedor de Salida */
+div {
+    margin-top: 20px;
+}
+
+/* Área de Texto Pre */
+pre {
+    background: rgba(20, 20, 40, 0.6);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(102, 126, 234, 0.4);
+    border-radius: 15px;
+    padding: 25px;
+    color: #00ff00;
+    font-size: 0.9em;
+    line-height: 1.8;
+    max-height: 600px;
+    overflow-y: auto;
+    margin-top: 15px;
+    box-shadow: inset 0 8px 32px 0 rgba(31, 38, 135, 0.2), 0 0 20px rgba(102, 126, 234, 0.3);
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Estilos para párrafos dentro de pre */
+pre p {
+    margin: 8px 0;
+    font-family: 'Courier New', monospace;
+}
+
+/* Estilos para listas */
+ul {
+    list-style: none;
+    margin: 15px 0;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-left: 4px solid #667eea;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border-radius: 8px;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+li:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+    border-left-color: #764ba2;
+}
+
+/* Strong text styling */
+strong {
+    color: #ffd700;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll bar styling */
+pre::-webkit-scrollbar {
+    width: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+
+    pre {
+        font-size: 0.85em;
+        max-height: 300px;
+    }
+}
+
+/* Animación de entrada */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: slideIn 0.5s ease;
+}

@@ -3,6 +3,7 @@ const lista = document.getElementById('ListaTareas');
 const mensaje = document.getElementById('mensaje');
 
 let tareas = [];
+let editandoIndex = -1;
 
 formulario.addEventListener('submit', agregarTarea);
 
@@ -17,7 +18,15 @@ function agregarTarea(e) {
     }
 
     mensaje.textContent = '';
-    tareas.push({ nombre, prioridad, fecha, estado: false });
+    
+    if (editandoIndex !== -1) {
+        tareas[editandoIndex] = { nombre, prioridad, fecha, estado: tareas[editandoIndex].estado };
+        editandoIndex = -1;
+        document.querySelector('button[type="submit"]').textContent = 'Agregar';
+    } else {
+        tareas.push({ nombre, prioridad, fecha, estado: false });
+    }
+    
     formulario.reset();
     mostrarTareas();
     actualizarResumen();
@@ -46,6 +55,7 @@ function mostrarTareas() {
                 <p><strong>Estado:</strong> ${estado}</p>
             </div>
             <div class="tarea-acciones">
+                <button onclick="modificarTarea(${index})" class="btn-modificar">Modificar</button>
                 <button onclick="completarTarea(${index})" class="btn-completar">
                     ${tarea.estado ? 'Deshacer' : 'Completar'}
                 </button>
@@ -55,6 +65,17 @@ function mostrarTareas() {
         
         lista.appendChild(div);
     });
+}
+
+function modificarTarea(index) {
+    const tarea = tareas[index];
+    document.getElementById('nombre').value = tarea.nombre;
+    document.getElementById('prioridad').value = tarea.prioridad;
+    document.getElementById('fecha').value = tarea.fecha;
+    editandoIndex = index;
+    document.querySelector('button[type="submit"]').textContent = 'Guardar Cambios';
+    formulario.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('nombre').focus();
 }
 
 function completarTarea(index) {

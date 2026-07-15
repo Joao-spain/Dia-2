@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -26,6 +27,15 @@
         </section>
 
         <section>
+            <div class="contenedor-botones-clima">
+                <button type="button" id="btnClima" class="btn-clima">Consultar clima</button>
+                <button type="button" id="btnActualizarClima" class="btn-clima btn-clima-actualizar">Actualizar</button>
+            </div>
+            <p id="mensajeClima"></p>
+            <section id="climaContainer"></section>
+        </section>
+
+        <section>
             <h3>Resumen de Tareas: </h3>
             <p>Total: <span id="total">0</span></p>
             <p>Pendientes: <span id="pendientes">0</span></p>
@@ -38,6 +48,7 @@
     </main>
     <footer>Derechos Reservados por Joao &copy;2023</footer>
 
+    <script src="jss/clima.js"></script>
     <script src="jss/script.js"></script>
 </body>
 </html>
